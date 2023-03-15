@@ -1,0 +1,770 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,600&family=Ubuntu:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.max-width {
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.about-foundation, .our-services,
+.owner-surrender, .support-us,
+.dog-list, .adoption-fees, .donate,
+.volunteer, .wall-of-volunteers,
+.shop-section, .product, .my-cart,
+.checkout {
+    width: 100%;
+    padding: 80px 0;
+}
+
+.about-content, .services-content, 
+.support-content, .footer-content,
+.dogList-content, .donate-content,
+.product-content, .mycart-content,
+.checkout-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.section-title {
+    font-family: 'Permanent Marker', 'sans-serif';
+    color: #D80086;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.abt-content, .card-content, .foster-form {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.abt-links .button,
+.card-content .button,
+.foster-form .button {
+    background: #F9DAED;
+    color: #000;
+    padding: 8px 30px;
+}
+
+.abt-content p,
+.service-card p,
+.owner-surrender p,
+.support-surrender p,
+.support-card p,
+.foster-form p,
+.volunteer p,
+.wall-of-volunteers p,
+.product p {
+    font-family: 'Poppins', 'sans-serif';
+    color: #5C6267;
+}
+
+p .email {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #D80086;
+    transition: all 200ms;
+}
+
+p .email:hover {
+    background: #F9DAED;
+}
+
+p .address {
+    color: #000;
+    font-weight: bold;
+}
+
+.pagination {
+    justify-content: flex-end;
+}
+
+.pagination li {
+    margin-left: 20px;
+    border: 2px solid #D80086;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: ease 200ms;
+}
+
+.pagination li:hover,
+.pagination li.active {
+    background: #D80086;
+    color: #fff;
+}
+
+
+
+/* Navbar Styling */
+.navbar {
+    display: block;
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+    padding: 20px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.navbar .max-width {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    object-position: center ;
+}
+
+.navbar .menu {
+    margin: 0;
+}
+
+.navbar .menu li {
+    display: inline-block;
+}
+
+.navbar .menu li a {
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar .menu li a:hover {
+    color: #F9DAED;
+}
+
+#adoptionMenuItem,
+#contactMenuItem {
+    position: relative;
+    cursor: pointer;
+}
+
+#adoptionMenuItem a.menu-btn,
+#contactMenuItem a.menu-btn {
+    margin-bottom: 8px;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    right: 0;
+    width: 150px;
+    text-align: end;
+}
+
+#contactMenuItem .dropdown {
+    width: 200px;
+}
+
+#adoptionMenuItem .dropdown a,
+#contactMenuItem .dropdown a {
+    padding: 7px 15px;
+    color: #000;
+    font-size: 1rem;
+    font-weight: normal;
+    margin-left: 0;
+    transition: all ease 200ms;
+}
+
+#adoptionMenuItem .dropdown a:hover,
+#contactMenuItem .dropdown a:hover {
+    background: #F9DAED;
+    color: #000;
+}
+
+#adoptionMenuItem:hover .dropdown,
+#contactMenuItem:hover .dropdown {
+    display: block;
+}
+
+.fas.fa-shopping-cart {
+    font-size: 1.6rem;
+}
+
+/* menu btn styling */
+.menu-btn {
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+
+.menu-btn.button {
+    background: #F9DAED;
+    color: #000 !important;
+    border: none;
+    padding: 5px 30px;
+}
+
+.scroll-up-btn {
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: #F9DAED;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.scroll-up-btn.show {
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+
+/* Hero Banner Page */
+.carousel {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.carousel > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity ease-in-out 200ms;
+    transition-delay: 200ms;
+}
+
+.slide > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slide[data-active] {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
+}
+
+.black-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .35);
+    z-index: 2;
+}
+
+.carousel-button {
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 4rem;
+    top: 50%;
+    z-index: 4;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, .5);
+    cursor: pointer;
+    border-radius: .25rem;
+    padding: 0 .5rem;
+    background-color: rgba(0, 0, 0, .1);
+    transition: all ease 200ms;
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+    color: #F9DAED;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.carousel-button:focus {
+    outline: 1px solid #000;
+}
+
+.carousel-button.prev {
+    left: 1rem;
+}
+
+.carousel-button.next {
+    right: 1rem;
+}
+
+.home-content {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    font-family: 'Permanent Marker', 'sans-serif';
+    color: #fff;
+    width: 100%;
+}
+
+.home .home-content .text-1 {
+    font-size: 100px;
+}
+
+.home .home-content .text-2 {
+    font-size: 45px;
+}
+
+.home .home-content .text-3 {
+    margin-top: 40px;
+}
+
+a.button {
+    color: #000;
+    background: none;
+    border: 2px solid #F9DAED;
+    color: #fff;
+    font-family: 'Poppins', 'sans-serif';
+    padding: 10px 50px;
+    border-radius: 20px;
+    font-weight: 700;
+    transition: all ease 200ms;
+}
+
+a.button:hover {
+    color: #000;
+    background: #F9DAED;
+}
+
+a.link-btn {
+    font-family: 'Poppins', 'sans-serif';
+    color: #5C6267;
+    text-decoration: underline;
+    font-size: 1.2rem;
+    transition: color ease 200ms;
+}
+
+a.link-btn:hover {
+    color: #D80086;
+}
+
+
+
+/* footer section styling */
+footer {
+    background: #F9DAED;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+.footer-content {
+    padding: 80px 0 60px 0;
+    align-items: flex-start;
+}
+
+footer img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    object-position: center;
+}
+
+footer .list-header {
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+footer .abt-us,
+footer .get-involved {
+    flex-basis: 30%;
+}
+
+footer li a {
+    color: #5C6267;
+    transition: all ease 200ms;
+}
+
+footer li a:hover {
+    color: #D80086;
+    text-decoration: underline;
+}
+
+footer .footer-divide {
+    height: 2px;
+    background: #5C6267;
+}
+
+footer .copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copyright a {
+    color: #306AC0;
+}
+
+.overlay {
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+    z-index: 999;
+    position: fixed;
+    background: rgba(0, 0, 0, .6);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.cart {
+    position: fixed;
+    height: 100vh;
+    padding: 40px;
+    right: -100%;
+    color: #F9DAED;
+    top: 0;
+    background: #111;
+    text-align: center;
+    overflow-y: scroll;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.cart.active {
+    right: 0;
+    text-align: left;
+}
+
+.cart .cart-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 80vh;
+}
+
+.cart .item-list {
+    max-height: 430px;
+    overflow-y: scroll;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.close-cart {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: ease 200ms;
+}
+
+.close-cart i {
+    margin-right: 10px;
+}
+
+.close-cart:hover {
+    color: #fff;
+    font-weight: 700;
+}
+
+.cart-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cart-item-content p {
+    font-family: 'Poppins', 'sans-serif';
+    margin-bottom: 3px;
+}
+
+.cart-item-content .product-name {
+    font-size: 1.5rem;
+}
+
+.cart-item-content .product-price {
+    font-weight: bold;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid;
+    width: 70%;
+    margin-top: 10px;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+.counter i {
+    cursor: pointer;
+}
+
+.subtotal {
+    width: 100%;
+}
+
+.subtotal h3,
+.subtotal h4 {
+    font-weight: normal;
+    font-family: 'Ubuntu', 'sans-serif';
+}
+
+.subtotal h3 {
+    font-size: 1.75rem;
+}
+
+.subtotal h4 {
+    font-size: 1.5rem;
+}
+
+.subtotal .vc-btn {
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 3px 0;
+    background: #F9DAED;
+    font-weight: 500;
+    outline: none;
+    border: 2px solid #D80086;
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 1300px) {
+    .cart .cart-content {
+        height: auto;
+    }
+
+    
+    .cart .item-list {
+        max-height: 280px;
+    }
+}
+
+@media (max-width: 991px) {
+    .max-width {
+        padding: 0 50px;
+    }
+
+    .home .home-content .text-1 {
+        font-size: 70px;
+    }
+    
+    .home .home-content .text-2 {
+        font-size: 35px;
+    }
+    
+    .home .home-content .text-3 {
+        margin-top: 40px;
+    }
+
+    footer li a {
+        font-size: .9rem;
+    }
+
+    footer .abt-us, footer .get-involved {
+        flex-basis: 30%;
+    }
+}
+
+@media (max-width: 921px) {
+    .menu-btn {
+        display: block;
+        z-index: 999;
+    }
+
+    .fas.fa-bars.active {
+        position: fixed;
+        left: 92%;
+        top: 8%;
+    }
+
+    .menu-btn i.active:before {
+        content: "\f00d";
+    }
+
+    .fas.fa-shopping-cart:before {
+        content: "\f07a" !important;
+    }
+
+    .navbar .menu {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        overflow-y: scroll;
+        transition: all 0.3s ease;
+    }
+
+    .navbar .menu.active {
+        left: 0;
+        text-align: left;
+        padding-left: 100px;
+    }
+
+    .navbar .menu li {
+        display: block;
+    }
+
+    .navbar .menu li a {
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+
+    .dropdown {
+        display: flex;
+        position: static;
+        text-align: left;
+        width: 100% !important;
+        background: none;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding-left: 30px;
+    }
+
+    #adoptionMenuItem .dropdown a,
+    #contactMenuItem .dropdown a {
+        padding: 0;
+        color: #fff;
+        font-size: 20px;
+        margin: 8px 0;
+    }
+
+    #adoptionMenuItem .dropdown a:hover,
+    #contactMenuItem .dropdown a:hover {
+        background: none;
+        color: #F9DAED;
+    }
+
+    #adoptionMenuItem:hover .dropdown,
+    #contactMenuItem:hover .dropdown {
+        display: flex;
+    }
+}
+
+@media (max-width: 775px) {
+    footer li a {
+        font-size: 1rem;
+    }
+    
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 690px) {
+    .max-width {
+        padding: 0 23px;
+    }
+
+    .home .home-content .text-1 {
+        font-size: 50px;
+    }
+    
+    .home .home-content .text-2 {
+        font-size: 20px;
+    }
+    
+    .home .home-content .text-3 {
+        margin-top: 20px;
+    }
+
+    a.button {
+        font-size: 0.8rem;
+        padding: 8px 30px;
+    }
+
+    .carousel-button {
+        font-size: 2rem;
+        padding: 0 .5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .home .home-content .text-1 {
+        font-size: 40px;
+    }
+    
+    .home .home-content .text-2 {
+        font-size: 20px;
+    }
+    
+    .home .home-content .text-3 {
+        margin-top: 20px;
+    }
+
+    a.button {
+        font-size: 0.8rem;
+        padding: 8px 30px;
+    }
+
+    .carousel-button {
+        font-size: 1rem;
+        padding: 0 .5rem;
+    }
+
+    .copyright {
+        font-size: 0.8rem;
+    }
+}

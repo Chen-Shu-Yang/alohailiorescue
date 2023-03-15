@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/logo.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../vendors/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../vendors/fontawesome/css/all.css">
+    <link rel="stylesheet" href="../vendors/fontawesome/css/solid.css">
+    <link rel="stylesheet" href="../assets/css/common.css" />
+    <link rel="stylesheet" href="../assets/css/checkout.css" />
+    <script src="../assets/js/common.js" defer></script>
+    <title>Checkout</title>
+</head>
+
+<body>
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo">
+                <a href="/">
+                    <img src="../assets/img/Logo-bg.png" loading="lazy" alt="">
+                </a>
+                <span>C H E C K O U T</span>
+            </div>
+            <ul class="menu">
+                <li><a href="/" class="menu-btn"></a></li>
+                <li><a href="/" class="menu-btn">Continue Browsing</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Checkout Section Start -->
+    <section class="checkout" id="checkoutSection">
+        <div class="max-width">
+            <div class="checkout-content">
+                <div class="checkout-form">
+                    <form name="shippingDtl" class="shipping-dtls">
+                        <h2 class="checkout-title"><span>1</span>Shipping Details</h2>
+                        <div class="collapse show" id="shippingDtl">
+                            <label for="emailForCfm">Email for Order Confirmation:<span
+                                    style="color: red">*</span></label><br>
+                            <input type="email" name="emailForCfm" id="emailForCfm">
+                            <div class="inner-flex">
+                                <div>
+                                    <label for="checkoutFirstName">First Name:<span
+                                            style="color: red">*</span></label><br>
+                                    <input type="text" name="checkoutFirstName" id="checkoutFirstName">
+                                </div>
+                                <div>
+                                    <label for="checkoutLastName">Last Name:<span
+                                            style="color: red">*</span></label><br>
+                                    <input type="text" name="checkoutLastName" id="checkoutLastName">
+                                </div>
+                            </div>
+                            <label for="checkoutAddr">Address:<span style="color: red">*</span></label><br>
+                            <input type="text" name="checkoutAddr" id="checkoutAddr">
+                            <div class="inner-flex">
+                                <div>
+                                    <label for="checkoutStateCountry">State/Country:<span
+                                            style="color: red">*</span></label><br>
+                                    <input type="text" name="checkoutStateCountry" id="checkoutStateCountry">
+                                </div>
+                                <div>
+                                    <label for="checkoutTownCity">Town/City:<span
+                                            style="color: red">*</span></label><br>
+                                    <input type="text" name="checkoutTownCity" id="checkoutTownCity">
+                                </div>
+                            </div>
+                            <div class="inner-flex">
+                                <div>
+                                    <label for="checkoutPostal">Zip/Postal Code:<span
+                                            style="color: red">*</span></label><br>
+                                    <input type="text" name="checkoutPostal" id="checkoutPostal">
+                                </div>
+                                <div>
+                                    <label for="checkoutPhone">Phone Number:<span
+                                            style="color: red">*</span></label><br>
+                                    <input type="number" name="checkoutPhone" id="checkoutPhone">
+                                </div>
+                            </div>
+                            <input type="button" class="button" id="submitShippingDtl" value="Continue"
+                                data-toggle="collapse" data-target="#deliveryMethodDtl" aria-expanded="true"
+                                aria-controls="deliveryMethodDtl" onclick="$('#shippingDtl').collapse('hide')">
+                        </div>
+                    </form>
+                    <hr>
+                    <form class="delivery-method" name="deliveryMethod">
+                        <h2 class="checkout-title"><span>2</span>Delivery Method</h2>
+                        <div class="collapse" id="deliveryMethodDtl">
+                            <h4>Shipping</h4>
+                            <div class="shipping-type">
+                                <input type="radio" name="deliveryMethod" id="standardShipping"
+                                    onclick="$('.pickup-dtl').toggleClass('active');" checked>
+                                <label for="standardShipping">
+                                    <span class="label">Standard Shipping</span>
+                                    <span class="price">$8.99</span>
+                                </label>
+                            </div>
+
+                            <h4>Pickup</h4>
+                            <div class="pickup">
+                                <div class="shipping-type">
+                                    <input type="radio" name="deliveryMethod" id="pickupAddr"
+                                        onclick="$('.pickup-dtl').toggleClass('active');">
+                                    <label for="pickupAddr">
+                                        <div class="label">
+                                            <span>Local Pickup</span><br>
+                                            <span class="emailAddr">Please Email officeteam@alohailiorescue.com with
+                                                your
+                                                order
+                                                number to coordinate a local pickup, Keaau, Hawaii, 96749, United
+                                                States</span>
+                                        </div>
+                                        <span class="price">Free</span>
+                                    </label>
+                                </div>
+                                <div class="pickup-dtl">
+                                    <div class="pickup-dtl-row">
+                                        <span>Pickup Address</span>
+                                        <p>
+                                            Please Email officeteam@alohailiorescue.com with your order number to
+                                            coordinate a
+                                            local pickup, Keaau, Hawaii, 96749, United States<br><br>Local Pickup will
+                                            be
+                                            ready within 48 hours Mon-Sat of every week.
+                                        </p>
+                                    </div>
+                                    <div class="pickup-dtl-row">
+                                        <span>Pickup Instructions</span>
+                                        <p>Please email officeteam@alohailiorescue.com to coordinate local pickup.</p>
+                                    </div>
+                                </div>
+                            </div><br>
+                            <input type="button" class="button" id="submitDeliveryDtl" value="Continue"
+                                data-toggle="collapse" data-target="#payment" aria-expanded="true"
+                                aria-controls="payment" onclick="$('#deliveryMethodDtl').collapse('hide')">
+                        </div>
+
+                    </form>
+                    <hr>
+                    <form class="payment">
+                        <h2 class="checkout-title"><span>3</span>Payment</h2>
+                        <div class="collapse" id="payment">
+                            <div class="payment-dtl">
+                                <p><i class="fa-solid fa-lock"></i> <span>Your payment is secure.</span></p>
+                                <label for="checkoutCardNum">Card Number:<span style="color: red">*</span></label><br>
+                                <input type="number" name="checkoutCardNum" id="checkoutCardNum">
+                                <div class="inner-flex">
+                                    <div>
+                                        <label for="checkoutExpDate">Exp Date:<span
+                                                style="color: red">*</span></label><br>
+                                        <input type="text" name="checkoutExpDate" id="checkoutExpDate">
+                                    </div>
+                                    <div>
+                                        <label for="checkoutCVV">CVV:<span
+                                                style="color: red">*</span></label><br>
+                                        <input type="number" name="checkoutCVV" id="checkoutCVV">
+                                    </div>
+                                </div>
+                                <label for="checkoutCardHolder">Cardholder Name:<span
+                                        style="color: red">*</span></label><br>
+                                <input type="text" name="checkoutCardHolder" id="checkoutCardHolder">
+                                <input type="button" class="button" id="submitPayment" value="Continue">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="order-summary">
+                    <div class="summary-head">
+                        <h5>Order Summary (3)</h5>
+                        <a href="/cart">Edit Cart</a>
+                    </div>
+                    <div class="summary-prod-list">
+                        <div class="smry-product">
+                            <img src="../assets/img/product-1.jpg" alt="">
+                            <div class="prod-dtl">
+                                <div class="dtl-header">
+                                    <span><b>Tribal</b></span>
+                                    <span>$19.99</span>
+                                </div>
+                                <span>Qty: 1</span><br>
+                                <span data-toggle="tooltip" data-placement="bottom" title="Size: Medium">More Details
+                                    +</span>
+                            </div>
+                        </div>
+                        <div class="smry-product">
+                            <img src="../assets/img/product-1.jpg" alt="">
+                            <div class="prod-dtl">
+                                <div class="dtl-header">
+                                    <span><b>Tribal</b></span>
+                                    <span>$19.99</span>
+                                </div>
+                                <span>Qty: 1</span><br>
+                                <span data-toggle="tooltip" data-placement="bottom" title="Size: Medium">More Details
+                                    +</span>
+                            </div>
+                        </div>
+                        <div class="smry-product">
+                            <img src="../assets/img/product-1.jpg" alt="">
+                            <div class="prod-dtl">
+                                <div class="dtl-header">
+                                    <span><b>Tribal</b></span>
+                                    <span>$19.99</span>
+                                </div>
+                                <span>Qty: 1</span><br>
+                                <span data-toggle="tooltip" data-placement="bottom" title="Size: Medium">More Details
+                                    +</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checkout-promo">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#promoCodeInput"
+                            aria-expanded="true" aria-controls="promoCodeInput">
+                            <i class="fa-solid fa-tag"></i>
+                            <span>Enter a Promo Code</span>
+                        </button>
+
+                        <div id="promoCodeInput" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                                <div class="code-input">
+                                    <input type="text" id="promoCode" placeholder="Enter a Promo Code">
+                                    <button>Apply</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checkout-prices">
+                        <div class="sub-totals">
+                            <div class="price">
+                                <span>Subtotal</span>
+                                <span>$49.98</span>
+                            </div>
+                            <div class="price">
+                                <span>Pickup</span>
+                                <span>Free</span>
+                            </div>
+                            <div class="price">
+                                <span>Sales Tax</span>
+                                <span>$2.25</span>
+                            </div>
+                        </div>
+                        <div class="price total">
+                            <h3>Total</h3>
+                            <h3>$52.23</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section Start -->
+    <footer class="footer">
+        <div class="footer-divide"></div>
+        <div class="max-width">
+            <div class="footer-content">
+                <a href="/">Terms & Conditions</a>
+                <a href="/">Return Policy</a>
+                <a href="/">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+</script>
+
+</html>

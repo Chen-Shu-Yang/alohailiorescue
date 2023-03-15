@@ -1,0 +1,243 @@
+/* About Foundation Section */
+.abt-img {
+    width: 50%;
+}
+
+.about-content .section-title {
+    margin: 0;
+}
+
+.abt-links a.link-btn {
+    margin-left: 30px;
+}
+
+.overlay {
+    display: block;
+}
+
+
+
+/* Our Services Section */
+.our-services {
+    background: #F9DAED;
+}
+
+.service-card .card-content {
+    align-items: center;
+}
+
+.service-card {
+    background: #fff;
+    height: 500px;
+    border-radius: 30px;
+    flex-basis: calc(100% / 3);
+    padding: 30px;
+    text-align: center;
+}
+
+.service-card img {
+    width: 100%;
+    height: 40%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.inner-title {
+    font-family: 'Permanent Marker', 'sans-serif';
+    color: #D80086;
+    text-align: center;
+}
+
+
+
+/* Owner Surrender Section */
+.surrender-container {
+    position: relative;
+    height: 700px;
+}
+
+.surrender-container img,
+.surrender-container .max-width,
+.surrender-container .overlay {
+    position: absolute;
+}
+
+.surrender-container img,
+.surrender-container .overlay {
+    width: 100%;
+    height: 100%;
+}
+
+.surrender-container img {
+    object-fit: cover;
+}
+
+.surrender-container .overlay {
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 2;
+}
+
+.surrender-container .max-width {
+    z-index: 3;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    padding: 0;
+}
+
+.surrender-container h1,
+.surrender-container p {
+    color: #F9DAED;
+    text-align: center;
+}
+
+.surrender-container p {
+    font-size: 1.5rem;
+}
+
+.surrender-container .tag-name {
+    color: #D80086;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+
+
+/* Support Us Section */
+.support-content {
+    flex-wrap: wrap
+}
+
+.support-card{
+    background: #fff;
+    height: 400px;
+    flex-basis: 40%;
+    border: 2px solid #D80086;
+}
+
+.support-card img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.support-card .card-content {
+    padding: 15px 30px 0 30px;
+}
+
+@media (max-width: 1070px) {
+    .card-content {
+        gap: 10px;
+    }
+
+    .about-content, .services-content, .support-content, .footer-content {
+        gap: 60px;
+    }
+}
+
+@media (max-width: 991px) {
+    .about-content .section-title {
+        font-size: 1.7rem;
+    }
+
+    .abt-content p,
+    .abt-links a.link-btn {
+        font-size: 0.8rem;
+    }
+
+    .abt-links .button {
+        padding: 8px 20px;
+    }
+
+    .support-us .max-width {
+        padding: 0;
+    }
+
+    .support-content {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 921px) {
+    .about-content, .services-content, .support-content, .footer-content {
+        gap: 30px;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+    }
+
+    .support-card {
+        height: auto;
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 750px) {
+    .services-content, .about-content, .support-content {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .abt-img {
+        width: 100%;
+    }
+
+    .abt-content p, .abt-links a.link-btn {
+        font-size: 1rem;
+    }
+
+    .service-card, .support-card  {
+        height: auto;
+        min-height: 450px;
+        flex-basis: 80%;
+    }
+
+    .card-content {
+        gap: 20px;
+    }
+
+    .service-card p {
+        font-size: 1rem;
+    }
+
+    .service-card img {
+        height: 50%;
+        object-fit: contain;
+    }
+
+    .support-card .card-content {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 690px) {
+    .surrender-container p {
+        width: calc(100vw - 20vw);
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .surrender-container h1, .surrender-container p {
+        font-size: 1.8rem;
+    }
+
+    .surrender-container p {
+        font-size: 1rem;
+    }
+
+    .services-content {
+        display: block;
+        gap: 20px;
+    }
+
+    .service-card {
+        margin-bottom: 20px;
+    }
+
+    .service-card:last-child {
+        margin-bottom: 0;
+    }
+}

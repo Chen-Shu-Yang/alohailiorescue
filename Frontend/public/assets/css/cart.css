@@ -1,0 +1,125 @@
+.carousel, .black-overlay {
+    height: 500px;
+}
+
+.home-content .text-1 {
+    color: #F9DAED;
+}
+
+.product-content, .mycart-content,
+.mycart-item .item-dtl {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.mycart-item .item-dtl {
+    flex-basis: 70%;
+    justify-content: flex-start;
+}
+
+.mycart-list {
+    width: 100%;
+    flex-basis: 70%;
+}
+
+.mycart-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.mycart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.mycart-item .content-item {
+    flex-basis: 100%;
+}
+
+.mycart-item p {
+    font-family: 'Poppins', 'sans-serif';
+    margin-bottom: 3px;
+}
+
+.mycart-item .product-name {
+    font-size: 1.5rem;
+}
+
+.mycart-item .product-price {
+    font-weight: bold;
+}
+
+.mycart-item .fa-solid.fa-xmark {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.mycart-item .counter {
+    width: 50%;
+    margin-top: 0;
+}
+
+.collapsible-item span {
+    font-size: 1.3rem;
+}
+
+.code-input {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.code-input input {
+    width: 30%;
+    padding: 2px 5px;
+    border: none;
+    border: 1px solid #D80086;
+    outline: none;
+    font-size: 1.2rem;
+}
+
+.code-input button {
+    padding: 2px 5px;
+    background: none;
+    color: #D80086;
+    border: 1px solid #D80086;
+    border-left: none;
+    outline: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+#addNoteInput textarea {
+    width: 100%;
+    resize: none;
+    outline: none;
+    border: 2px solid #D80086;
+    padding: 3px 5px;
+}
+
+
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.checkoutBtn {
+    width: 100%;
+    padding: 5px;
+    border: 2px solid #D80086;
+    outline: none;
+    color: #D80086;
+    background: #F9DAED;
+    cursor: pointer;
+}

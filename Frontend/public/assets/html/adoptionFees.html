@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/logo.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../vendors/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../vendors/fontawesome/css/all.css">
+    <link rel="stylesheet" href="../vendors/fontawesome/css/solid.css">
+    <link rel="stylesheet" href="../assets/css/common.css" />
+    <link rel="stylesheet" href="../assets/css/adoptionFees.css" />
+    <script src="../assets/js/common.js" defer></script>
+    <title>Adoption Fees</title>
+</head>
+
+<body>
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo">
+                <a href="/">
+                    <img src="../assets/img/Logo-bg.png" loading="lazy" alt="">
+                </a>
+            </div>
+            <ul class="menu">
+                <li id="adoptionMenuItem">
+                    <a href="/adoptabledogs" class="menu-btn">Adoption</a>
+                    <div class="dropdown">
+                        <a href="/adoptabledogs">Adoptable Dogs</a>
+                        <a href="/adoptionfees">Adoption Fees</a>
+                    </div>
+                </li>
+                <li><a href="/" class="menu-btn">Stories</a></li>
+                <li><a href="/" class="menu-btn">Upcoming Events</a></li>
+                <li><a href="/shop" class="menu-btn">Shop</a></li>
+                <li id="contactMenuItem">
+                    <a href="/contact" class="menu-btn">Contact</a>
+                    <div class="dropdown">
+                        <a href="/itemdonate">Donate Food & Items</a>
+                        <a href="/volunteer">Volunteer</a>
+                        <a href="/sponsorships">Become Partners</a>
+                    </div>
+                </li>
+                
+                <li><a href="javascript:openCart();" class="menu-btn cart-btn"><i class="fas fa-shopping-cart"></i></a>
+                </li>
+                <li><a href="/donate" class="menu-btn button">Donate</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- home Section Start -->
+    <section class="home" id="home">
+        <div aria-label="Hero Images">
+            <div class="carousel" data-carousel>
+                <div class="black-overlay"></div>
+                <div class="home-content">
+                    <div class="text-1">Adoption Fees</div>
+                </div>
+                <ul data-slides>
+                    <li class="slide" data-active><img src="../assets/img/banner-6.png" alt="Dog1" loading="lazy"></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fees Section Start -->
+    <section class="adoption-fees" id="adoptionFees">
+        <div class="max-width">
+            <div class="fees-content">
+                <div class="fee-slider">
+                    <span id="adoptionFeesIndicator" onclick="adoptionCards();" class="active">Adoption Fees</span>
+                    <span id="microchipCardsIndicator" onclick="microchipCards();" class>Microchip Registration</span>
+                    <span id="flightCardsIndicator" onclick="flightCards();" class>Inter-Island Flight Fee</span>
+                </div>
+                <div class="card-slider">
+                    <div class="cards adoption-cards" id="adoptionCards">
+                        <div class="fee-card">
+                            <img src="../assets/img/dog-1.jpg" alt="" loading="lazy">
+                            <h6>Puppy Adoption</h6>
+                            <h4>Standard Fee</h4>
+                            <span><span class="dollar-icon">$</span><span class="pricing">200</span></span>
+                        </div>
+                        <div class="fee-card">
+                            <img src="../assets/img/dog-2.jpg" alt="" loading="lazy">
+                            <h6>Puppy Adoption</h6>
+                            <h4>PureBred Fee</h4>
+                            <span><span class="dollar-icon">$</span><span class="pricing">1000</span></span>
+                        </div>
+                        <div class="fee-card">
+                            <img src="../assets/img/dog-1.jpg" alt="" loading="lazy">
+                            <h6>Adult Dog Adoption</h6>
+                            <h4>Standard Fee</h4>
+                            <span><span class="dollar-icon">$</span><span class="pricing">150</span></span>
+                        </div>
+                        <div class="fee-card">
+                            <img src="../assets/img/dog-2.jpg" alt="" loading="lazy">
+                            <h6>Adult Dog Adoption</h6>
+                            <h4>PureBred Fee</h4>
+                            <span><span class="dollar-icon">$</span><span class="pricing">500</span></span>
+                        </div>
+                    </div>
+                    <div class="cards microchip-cards" id="microchipCards">
+                        <div class="fee-card">
+                            <img src="../assets/img/dog-1.jpg" alt="" loading="lazy">
+                            <h4>Microchip Registration</h4>
+                            <p>
+                                Although we chip every dog we adopt out at the shelter, it is the responsibility of the
+                                new
+                                owner to register the chip with the appropriate company. If you would like the shelter
+                                staff
+                                to register the chip for you, there is a fee of $25.00.
+                            </p>
+                            <span><span class="dollar-icon">$</span><span class="pricing">25</span></span>
+                        </div>
+                    </div>
+                    <div class="cards flight-cards" id="flightCards">
+                        <div class="fee-card">
+                            <img src="../assets/img/dog-1.jpg" alt="" loading="lazy">
+                            <h6>Inter-Island Flight Fee</h6>
+                            <h4>Small Dogs</h4>
+                            <span><span class="dollar-icon">$</span><span class="pricing">150</span></span>
+                        </div>
+                        <div class="fee-card">
+                            <img src="../assets/img/dog-2.jpg" alt="" loading="lazy">
+                            <h6>Inter-Island Flight Fee</h6>
+                            <h4>Medium Dogs</h4>
+                            <span><span class="dollar-icon">$</span><span class="pricing">175</span></span>
+                        </div>
+                        <div class="fee-card">
+                            <img src="../assets/img/dog-1.jpg" alt="" loading="lazy">
+                            <h6>Inter-Island Flight Fee</h6>
+                            <h4>Large Dogs</h4>
+                            <span><span class="dollar-icon">$</span><span class="pricing">200</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="overlay"></div>
+    <div class="cart">
+        <div class="close-cart">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Close Cart</span>
+        </div>
+        <h1>Cart</h1>
+        <div class="cart-content">
+            <div class="item-list">
+                <div class="cart-item">
+                    <img src="../assets/img/product-1.jpg" alt="">
+                    <div class="cart-item-content">
+                        <p class="product-name">Tribal</p>
+                        <p class="product-price">$19.99</p>
+                        <p class="product-size">Product Size: Medium</p>
+                        <div class="counter">
+                            <i class="fa-solid fa-minus" onclick="decrement(document.getElementById('tribalCount'))"></i>
+                            <div class="count" id="tribalCount" value="1">1</div>
+                            <i class="fa-solid fa-plus" onclick="increment(document.getElementById('tribalCount'))"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-item">
+                    <img src="../assets/img/product-1.jpg" alt="">
+                    <div class="cart-item-content">
+                        <p class="product-name">Tribal</p>
+                        <p class="product-price">$19.99</p>
+                        <p class="product-size">Product Size: Medium</p>
+                        <div class="counter">
+                            <i class="fa-solid fa-minus" onclick="decrement(document.getElementById('tribalCount'))"></i>
+                            <div class="count" id="tribalCount" value="2">2</div>
+                            <i class="fa-solid fa-plus" onclick="increment(document.getElementById('tribalCount'))"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-item">
+                    <img src="../assets/img/product-1.jpg" alt="">
+                    <div class="cart-item-content">
+                        <p class="product-name">Tribal</p>
+                        <p class="product-price">$19.99</p>
+                        <p class="product-size">Product Size: Medium</p>
+                        <div class="counter">
+                            <i class="fa-solid fa-minus" onclick="decrement(document.getElementById('tribalCount'))"></i>
+                            <div class="count" id="tribalCount" value="2">2</div>
+                            <i class="fa-solid fa-plus" onclick="increment(document.getElementById('tribalCount'))"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subtotal">
+                <h3>SubTotal</h3>
+                <h4>$49.98</h4>
+                <button class="vc-btn" onclick="location.href='/cart'">View Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section Start -->
+    <footer class="footer">
+        <div class="max-width">
+            <div class="footer-content">
+                <img src="../assets/img/Logo.png" loading="lazy" alt="">
+                <ul class="abt-us">
+                    <li class="list-header">About Us</li>
+                    <li><a href="/">Mission</a></li>
+                    <li><a href="/">About</a></li>
+                    <li><a href="/">Story of Goods</a></li>
+                    <li><a href="/">FAQ</a></li>
+                </ul>
+                <ul class="get-involved">
+                    <li class="list-header">Get Involved</li>
+                    <li><a href="/sponsorships">Become Partners</a></li>
+                    <li><a href="/donate">Donate</a></li>
+                    <li><a href="/volunteer">Volunteer</a></li>
+                    <li><a href="/">Career</a></li>
+                </ul>
+                <ul>
+                    <li class="list-header">Contact Us</li>
+                    <li><a href="/">Contact Us Form</a></li>
+                    <li><a href="/">Phone: (XXX) XXX-XXXX</a></li>
+                    <li><a href="/">Send Check To: XXXXXXXXXXXX XXXXXXXXX XXXXXX</a></li>
+                    <li><a href="/">Donate Item/Food To: XXXXXXXXXXXX XXXXXXXXX XXXXXX</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-divide"></div>
+        <div class="copyright">
+            <span>© 2023 All Rights Reserved | Coded by <a href="https://www.chenshuyang.com">ChenSY.</a></span>
+        </div>
+    </footer>
+</body>
+<script>
+    // JS for Toggle Form
+    var adoptionCard = document.getElementById('adoptionCards');
+    var microchipCard = document.getElementById('microchipCards');
+    var flightCard = document.getElementById('flightCards');
+    var adoptionCardIndic = document.getElementById('adoptionFeesIndicator');
+    var microchipCardIndic = document.getElementById('microchipCardsIndicator');
+    var flightCardIndic = document.getElementById('flightCardsIndicator');
+    var cardSliders = document.querySelector('.card-slider');
+    var maxWidth = $(window).width();
+
+    function adoptionCards() {
+        microchipCard.style.transform = "translateX(0px)";
+        adoptionCard.style.transform = "translateX(0px)";
+        flightCard.style.transform = "translateX(0px)";
+        adoptionCardIndic.classList.add("active");
+        microchipCardIndic.classList.remove("active");
+        flightCardIndic.classList.remove("active");
+
+        if (maxWidth <= 525) {
+            cardSliders.style.height = "1300px"
+        } else if (maxWidth > 905) {
+            cardSliders.style.height = "400px"
+        } else if (maxWidth <= 905) {
+            cardSliders.style.height = "700px"
+        }
+    }
+
+    function microchipCards() {
+        microchipCard.style.transform = "translateX(1300px)";
+        adoptionCard.style.transform = "translateX(1300px)";
+        flightCard.style.transform = "translateX(1300px)";
+        adoptionCardIndic.classList.remove("active");
+        microchipCardIndic.classList.add("active");
+        flightCardIndic.classList.remove("active");
+        cardSliders.style.height = "600px"
+    }
+
+    function flightCards() {
+        microchipCard.style.transform = "translateX(2600px)";
+        adoptionCard.style.transform = "translateX(2600px)";
+        flightCard.style.transform = "translateX(2600px)";
+        adoptionCardIndic.classList.remove("active");
+        microchipCardIndic.classList.remove("active");
+        flightCardIndic.classList.add("active");
+        
+        if (maxWidth > 720) {
+            cardSliders.style.height = "400px"
+        } else if (maxWidth <= 720) {
+            cardSliders.style.height = "1000px"
+        }
+    }
+</script>
+
+</html>

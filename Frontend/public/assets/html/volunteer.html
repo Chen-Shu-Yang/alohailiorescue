@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/logo.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../vendors/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../vendors/fontawesome/css/all.css">
+    <link rel="stylesheet" href="../vendors/fontawesome/css/solid.css">
+    <link rel="stylesheet" href="../assets/css/common.css" />
+    <link rel="stylesheet" href="../assets/css/volunteer.css" />
+    <script src="../assets/js/common.js" defer></script>
+    <title>Volunteer</title>
+</head>
+
+<body>
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo">
+                <a href="/">
+                    <img src="../assets/img/Logo-bg.png" loading="lazy" alt="">
+                </a>
+            </div>
+            <ul class="menu">
+                <li id="adoptionMenuItem">
+                    <a href="/adoptabledogs" class="menu-btn">Adoption</a>
+                    <div class="dropdown">
+                        <a href="/adoptabledogs">Adoptable Dogs</a>
+                        <a href="/adoptionfees">Adoption Fees</a>
+                    </div>
+                </li>
+                <li><a href="/" class="menu-btn">Stories</a></li>
+                <li><a href="/" class="menu-btn">Upcoming Events</a></li>
+                <li><a href="/shop" class="menu-btn">Shop</a></li>
+                <li id="contactMenuItem">
+                    <a href="/contact" class="menu-btn">Contact</a>
+                    <div class="dropdown">
+                        <a href="/itemdonate">Donate Food & Items</a>
+                        <a href="/volunteer">Volunteer</a>
+                        <a href="/sponsorships">Become Partners</a>
+                    </div>
+                </li>
+                
+                <li><a href="javascript:openCart();" class="menu-btn cart-btn"><i class="fas fa-shopping-cart"></i></a>
+                </li>
+                <li><a href="/donate" class="menu-btn button">Donate</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- home Section Start -->
+    <section class="home" id="home">
+        <div aria-label="Hero Images">
+            <div class="carousel" data-carousel>
+                <div class="black-overlay"></div>
+                <div class="home-content">
+                    <div class="text-1">Volunteer</div>
+                </div>
+                <ul data-slides>
+                    <li class="slide" data-active><img src="../assets/img/banner-9.jpg" loading="lazy" alt="Dog1"></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Section Start -->
+    <section class="volunteer" id="volunteer">
+        <div class="max-width">
+            <div class="volunteer-content">
+                <p class="volunteer-des">
+                    Like our fosters, our volunteers play a vital role in being able to continue our rescue's daily
+                    operations. Laundry, yard maintenance, cleaning, dishes, dog-walking, food-runs, and more are only
+                    some of the many important facets that our volunteers assist us in.<br><br>
+
+                    What we look for most in our volunteers is the drive and willingness to help our dogs. The work is
+                    not always clean. Our dogs deserve to frolic in a clean yard, which mean we must pick up the waste
+                    throughout the day. New arrivals, often coming in with matted fur, or dirt and mud embedded in cuts,
+                    must be cleaned and given a warm bed to lie down and decompress in. Bedding, sometimes soiled, must
+                    be washed and cleaned so it can be returned nice and warm. These are the quality-of-life standards
+                    that our rescue stands by and strives to uphold.<br><br>
+
+                    If you are interested in volunteering, please fill out a form below and we will get back to you as
+                    soon as possible. If you do not hear a response within 2-3 business days, please contact us at
+                    <span class="email">volunteers@alohailiorescue.com</span>
+                </p>
+                <h1 class="section-title">Volunteers' Tasks</h1>
+                <div class="volunteers-tasks">
+                    <div class="task">
+                        <img src="../assets/img/task-1.jpg" loading="lazy" alt="">
+                        <h5 class="task-label">Shelter Volunteer</h5>
+                        <p class="task-des">Your time is valuable, why not use it to cuddle dogs!</p>
+                        <a href="" class="button">Learn More</a>
+                    </div>
+                    <div class="task">
+                        <img src="../assets/img/task-1.jpg" loading="lazy" alt="">
+                        <h5 class="task-label">Drive a Good Deed</h5>
+                        <p class="task-des">Doing a Costco run? Help us with transporting dog food!</p>
+                        <a href="" class="button">Learn More</a>
+                    </div>
+                    <div class="task">
+                        <img src="../assets/img/task-1.jpg" loading="lazy" alt="">
+                        <h5 class="task-label">Dog Walkers</h5>
+                        <p class="task-des">Promised yourself you would get more exercise? Make a dogs day with a fun
+                            walk!</p>
+                        <a href="" class="button">Learn More</a>
+                    </div>
+                    <div class="task">
+                        <img src="../assets/img/task-1.jpg" loading="lazy" alt="">
+                        <h5 class="task-label">Help With Vet Visits</h5>
+                        <p class="task-des">Help our dogs receive care by taking them to vet appointments!</p>
+                        <a href="" class="button">Learn More</a>
+                    </div>
+                </div>
+                <div class="volunteer-form">
+                    <div class="form-slider">
+                        <div class="form form-content-1" id="volunteerForm">
+                            <h1 class="section-title">Volunteer Application Form</h1>
+                            <p>Give us a hand & start making a difference</p>
+                            <div class="inner-flex">
+                                <div>
+                                    <label for="volunteerFirstName">First Name</label><br>
+                                    <input type="text" name="volunteerFirstName" id="volunteerFirstName"
+                                        placeholder="Your First Name ...">
+                                </div>
+                                <div>
+                                    <label for="volunteerLastName">Last Name</label><br>
+                                    <input type="text" name="volunteerLastName" id="volunteerLastName"
+                                        placeholder="Your Last Name ...">
+                                </div>
+                            </div>
+                            <div class="inner-flex">
+                                <div>
+                                    <label for="volunteerEmail">Email</label><br>
+                                    <input type="email" name="volunteerEmail" id="volunteerEmail"
+                                        placeholder="Your Email ...">
+                                </div>
+                                <div>
+                                    <label for="volunteerPhone">Phone</label><br>
+                                    <input type="text" name="volunteerPhone" id="volunteerPhone"
+                                        placeholder="Your Phone ...">
+                                </div>
+                            </div>
+                            <div class="inner-flex">
+                                <div>
+                                    <label for="volunteerAddress">Address</label><br>
+                                    <input type="text" name="volunteerAddress" id="volunteerAddress"
+                                        placeholder="Your Address ...">
+                                </div>
+                                <div>
+                                    <label for="volunteerAge">Age</label><br>
+                                    <input type="number" name="volunteerAge" id="volunteerAge"
+                                        placeholder="Your Age ...">
+                                </div>
+                            </div>
+                            <label for="volunteerWhy">
+                                A few words about you, your history with dogs, and why you would like to volunteer
+                            </label><br>
+                            <textarea name="volunteerWhy" id="volunteerWhy" rows="5"
+                                placeholder="Tell us a bit about yourself"></textarea>
+                            <input type="button" class="button" value="Next" onclick="nextForm();">
+                        </div>
+                        <div class="form form-content-2" id="volunteerForm2">
+                            <label for="howYouFoundUs">How did you find out about us?</label><br>
+                            <select name="howYouFoundUs" id="howYouFoundUs">
+                                <option value="Social Media">Social Media</option>
+                                <option value="Word of Mouth">Word of Mouth</option>
+                                <option value="Others">Others</option>
+                            </select>
+                            <label for="howYouFoundUs">On what days are you available to volunteer?</label><br>
+                            <input type="checkbox" name="dayOfWeek" value="Mon">
+                            <label for="dayOfWeek">Monday</label><br>
+                            <input type="checkbox" name="dayOfWeek" value="Tue">
+                            <label for="dayOfWeek">Tuesday</label><br>
+                            <input type="checkbox" name="dayOfWeek" value="Wed">
+                            <label for="dayOfWeek">Wednesday</label><br>
+                            <input type="checkbox" name="dayOfWeek" value="Thu">
+                            <label for="dayOfWeek">Thursday</label><br>
+                            <input type="checkbox" name="dayOfWeek" value="Fri">
+                            <label for="dayOfWeek">Friday</label><br>
+                            <input type="checkbox" name="dayOfWeek" value="Sat">
+                            <label for="dayOfWeek">Saturday</label><br>
+                            <input type="checkbox" name="dayOfWeek" value="Sun">
+                            <label for="dayOfWeek">Sunday</label><br>
+                            <input type="button" class="button" id="backButton" value="Back" onclick="prevForm();">
+                            <input type="submit" class="button" id="submitFormBtn" value="Submit">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="wall-of-volunteers" id="wallOfVolunteers">
+        <div class="max-width">
+            <h1 class="section-title">Wall of Volunteers</h1>
+            <div class="wall-content">
+                <div class="wall-col">
+                    <div class="volunteer-card">
+                        <h5>Mark Trevor</h5>
+                        <p>Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor.
+                            Pellentesque facilisis</p>
+                    </div>
+                    <div class="volunteer-card">
+                        <h5>Eric Patterson</h5>
+                        <p>Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor.
+                            Pellentesque facilisis</p>
+                    </div>
+                    <div class="volunteer-card">
+                        <h5>Patricia McNeel</h5>
+                        <p>Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor.
+                            Pellentesque facilisis</p>
+                    </div>
+                    <div class="volunteer-card">
+                        <h5>Jason Kovalsky</h5>
+                        <p>Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor.
+                            Pellentesque facilisis</p>
+                    </div>
+                    <div class="volunteer-card">
+                        <h5>Charles Corridorro</h5>
+                        <p>Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor.
+                            Pellentesque facilisis</p>
+                    </div>
+                </div>
+                <div class="wall-col">
+                    <div class="volunteer-card">
+                        <h5>Mark Trevor</h5>
+                        <p>Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor.
+                            Pellentesque facilisis</p>
+                    </div>
+                    <div class="volunteer-card">
+                        <h5>Eric Patterson</h5>
+                        <p>Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor.
+                            Pellentesque facilisis</p>
+                    </div>
+                    <div class="volunteer-card">
+                        <h5>Patricia McNeel</h5>
+                        <p>Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor.
+                            Pellentesque facilisis</p>
+                    </div>
+                    <div class="volunteer-card">
+                        <h5>Jason Kovalsky</h5>
+                        <p>Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor.
+                            Pellentesque facilisis</p>
+                    </div>
+                    <div class="volunteer-card">
+                        <h5>Charles Corridorro</h5>
+                        <p>Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor.
+                            Pellentesque facilisis</p>
+                    </div>
+                </div>
+                <div class="wall-col">
+                    <div class="volunteer-card">
+                        <h5>Mark Trevor</h5>
+                        <p>Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor.
+                            Pellentesque facilisis</p>
+                    </div>
+                    <div class="volunteer-card">
+                        <h5>Eric Patterson</h5>
+                        <p>Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor.
+                            Pellentesque facilisis</p>
+                    </div>
+                    <div class="volunteer-card">
+                        <h5>Patricia McNeel</h5>
+                        <p>Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor.
+                            Pellentesque facilisis</p>
+                    </div>
+                    <div class="volunteer-card">
+                        <h5>Jason Kovalsky</h5>
+                        <p>Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor.
+                            Pellentesque facilisis</p>
+                    </div>
+                    <div class="volunteer-card">
+                        <h5>Charles Corridorro</h5>
+                        <p>Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor.
+                            Pellentesque facilisis</p>
+                    </div>
+                </div>
+                <div class="wall-col">
+                    <div class="volunteer-card">
+                        <h5>Mark Trevor</h5>
+                        <p>Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor.
+                            Pellentesque facilisis</p>
+                    </div>
+                    <div class="volunteer-card">
+                        <h5>Eric Patterson</h5>
+                        <p>Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor.
+                            Pellentesque facilisis</p>
+                    </div>
+                    <div class="volunteer-card">
+                        <h5>Patricia McNeel</h5>
+                        <p>Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor.
+                            Pellentesque facilisis</p>
+                    </div>
+                    <div class="volunteer-card">
+                        <h5>Jason Kovalsky</h5>
+                        <p>Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor.
+                            Pellentesque facilisis</p>
+                    </div>
+                    <div class="volunteer-card">
+                        <h5>Charles Corridorro</h5>
+                        <p>Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor.
+                            Pellentesque facilisis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="overlay"></div>
+    <div class="cart">
+        <div class="close-cart">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Close Cart</span>
+        </div>
+        <h1>Cart</h1>
+        <div class="cart-content">
+            <div class="item-list">
+                <div class="cart-item">
+                    <img src="../assets/img/product-1.jpg" alt="">
+                    <div class="cart-item-content">
+                        <p class="product-name">Tribal</p>
+                        <p class="product-price">$19.99</p>
+                        <p class="product-size">Product Size: Medium</p>
+                        <div class="counter">
+                            <i class="fa-solid fa-minus" onclick="decrement(document.getElementById('tribalCount'))"></i>
+                            <div class="count" id="tribalCount" value="1">1</div>
+                            <i class="fa-solid fa-plus" onclick="increment(document.getElementById('tribalCount'))"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-item">
+                    <img src="../assets/img/product-1.jpg" alt="">
+                    <div class="cart-item-content">
+                        <p class="product-name">Tribal</p>
+                        <p class="product-price">$19.99</p>
+                        <p class="product-size">Product Size: Medium</p>
+                        <div class="counter">
+                            <i class="fa-solid fa-minus" onclick="decrement(document.getElementById('tribalCount'))"></i>
+                            <div class="count" id="tribalCount" value="2">2</div>
+                            <i class="fa-solid fa-plus" onclick="increment(document.getElementById('tribalCount'))"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-item">
+                    <img src="../assets/img/product-1.jpg" alt="">
+                    <div class="cart-item-content">
+                        <p class="product-name">Tribal</p>
+                        <p class="product-price">$19.99</p>
+                        <p class="product-size">Product Size: Medium</p>
+                        <div class="counter">
+                            <i class="fa-solid fa-minus" onclick="decrement(document.getElementById('tribalCount'))"></i>
+                            <div class="count" id="tribalCount" value="2">2</div>
+                            <i class="fa-solid fa-plus" onclick="increment(document.getElementById('tribalCount'))"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subtotal">
+                <h3>SubTotal</h3>
+                <h4>$49.98</h4>
+                <button class="vc-btn" onclick="location.href='/cart'">View Cart</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer Section Start -->
+    <footer class="footer">
+        <div class="max-width">
+            <div class="footer-content">
+                <img src="../assets/img/Logo.png" loading="lazy" alt="">
+                <ul class="abt-us">
+                    <li class="list-header">About Us</li>
+                    <li><a href="/">Mission</a></li>
+                    <li><a href="/">About</a></li>
+                    <li><a href="/">Story of Goods</a></li>
+                    <li><a href="/">FAQ</a></li>
+                </ul>
+                <ul class="get-involved">
+                    <li class="list-header">Get Involved</li>
+                    <li><a href="/sponsorships">Become Partners</a></li>
+                    <li><a href="/donate">Donate</a></li>
+                    <li><a href="/volunteer">Volunteer</a></li>
+                    <li><a href="/">Career</a></li>
+                </ul>
+                <ul>
+                    <li class="list-header">Contact Us</li>
+                    <li><a href="/">Contact Us Form</a></li>
+                    <li><a href="/">Phone: (XXX) XXX-XXXX</a></li>
+                    <li><a href="/">Send Check To: XXXXXXXXXXXX XXXXXXXXX XXXXXX</a></li>
+                    <li><a href="/">Donate Item/Food To: XXXXXXXXXXXX XXXXXXXXX XXXXXX</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-divide"></div>
+        <div class="copyright">
+            <span>© 2023 All Rights Reserved | Coded by <a href="https://www.chenshuyang.com">ChenSY.</a></span>
+        </div>
+    </footer>
+</body>
+<script>
+    // JS for Toggle Form
+    var formSlider = document.querySelector('.form-slider');
+    var volunteerForm = document.getElementById('volunteerForm');
+    var volunteerForm2 = document.getElementById('volunteerForm2');
+    var maxWidth = $(window).width();
+
+    function prevForm() {
+        volunteerForm.style.transform = "translateX(0px)";
+        volunteerForm2.style.transform = "translateX(0px)";
+
+        if (maxWidth > 525) {
+            formSlider.style.height = "550px";
+        } else if (maxWidth <= 504) {
+            formSlider.style.height = "740px";
+        } else if (maxWidth <= 525) {
+            formSlider.style.height = "700px";
+        }
+    }
+
+    function nextForm() {
+        volunteerForm.style.transform = "translateX(-1000px)";
+        volunteerForm2.style.transform = "translateX(-1000px)";
+
+        if (maxWidth > 446) {
+            formSlider.style.height = "350px";
+        } else if (maxWidth <= 446) {
+            formSlider.style.height = "400px";
+        }
+    }
+</script>
+
+</html>

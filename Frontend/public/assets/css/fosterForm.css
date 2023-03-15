@@ -1,0 +1,154 @@
+.carousel {
+    height: 200vh;
+    min-height: 1000px;
+    max-height: 1000px;
+}
+
+.black-overlay {
+    height: 200vh;
+    min-height: 1000px;
+    max-height: 1000px;
+}
+
+
+
+.form {
+    max-width: 600px;
+    background: #fff;
+    border-radius: 30px;
+    margin: auto;
+    padding: 40px;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.form .section-title {
+    margin-bottom: 20px;
+}
+
+.form-slider {
+    width: 310%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 80px;
+}
+
+.foster-form {
+    width: 100%;
+    transition: all 0.7s;
+}
+
+.foster-form div {
+    width: 100%;
+    text-align: start;
+}
+
+.foster-form .flex-input {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.col-2 {
+    flex-basis: 65%;
+}
+
+.col-1 {
+    flex-basis: 30%;
+}
+
+.foster-form label {
+    color: #000;
+    font-family: 'Ubuntu', 'sans-serif';
+    font-weight: bold;
+}
+
+.foster-form .fosterFormInput {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 8px 10px;
+    border: 2px solid #D80086;
+    border-radius: 15px;
+    outline: none;
+}
+
+.foster-form .button {
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    padding: 10px 50px;
+    cursor: pointer;
+}
+
+.foster-form-3 .fosterFormInput {
+    font-size: 1rem;
+}
+
+.foster-form-3 {
+    height: 600px;
+    overflow-y: scroll;
+}
+
+.foster-form-3 textarea {
+    min-height: 100px;
+    height: 100%;
+}
+
+@media (max-width: 600px) {
+    .form {
+        border-radius: 0;
+        position: static;
+    }
+
+    .carousel {
+        position: static;
+    }
+
+    .home-content {
+        position: relative;
+    }
+
+    .black-overlay {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .form {
+        padding: 20px;
+    }
+
+    .form-slider {
+        gap: 65px;
+    }
+
+    .form .section-title {
+        font-size: 1.7rem;
+    }
+
+    .foster-form .fosterFormInput {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .form-slider {
+        width: 330%;
+        gap: 60px;
+    }
+}
+
+@media (max-width: 400px) {
+    .form-slider {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 335px) {
+    .form-slider {
+        gap: 40px;
+    }
+}
