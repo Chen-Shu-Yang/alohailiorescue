@@ -457,11 +457,17 @@ footer .copyright {
     left: 0;
 }
 
+.cart::-webkit-scrollbar,
+.cart .item-list::-webkit-scrollbar {
+    display: none;
+}
+
 .cart {
     position: fixed;
     height: 100vh;
+    min-width: 450px;
     padding: 40px;
-    right: -100%;
+    right: -140%;
     color: #F9DAED;
     top: 0;
     background: #111;
@@ -542,7 +548,7 @@ footer .copyright {
     align-items: center;
     justify-content: space-around;
     border: 1px solid;
-    width: 70%;
+    width: 105px;
     margin-top: 10px;
     font-family: 'Poppins', 'sans-serif';
 }
@@ -742,6 +748,10 @@ footer .copyright {
 }
 
 @media (max-width: 450px) {
+    .cart {
+        min-width: 100%;
+    }
+
     .home .home-content .text-1 {
         font-size: 40px;
     }

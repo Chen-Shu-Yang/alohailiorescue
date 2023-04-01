@@ -78,6 +78,11 @@ app.get('/checkout', (req, res) => {
   res.sendFile('/public/assets/html/checkout.html', { root: __dirname });
 });
 
+// go to Checkout Successful
+app.get('/checkout/success', (req, res) => {
+  res.sendFile('/public/assets/html/success.html', { root: __dirname });
+});
+
 // retrieve from public folder
 app.use(serveStatic(`${__dirname}/public`));
 

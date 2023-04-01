@@ -12,9 +12,12 @@
     <link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../vendors/fontawesome/css/all.css">
     <link rel="stylesheet" href="../vendors/fontawesome/css/solid.css">
+    <link rel="stylesheet" href="../vendors/jquery-ui/jquery-ui.css">
     <link rel="stylesheet" href="../assets/css/common.css" />
     <link rel="stylesheet" href="../assets/css/product.css" />
     <script src="../assets/js/common.js" defer></script>
+    <script src="../assets/js/products.js" defer></script>
+    <script src="../vendors/jquery-ui/jquery-ui.js" defer></script>
     <title>Products</title>
 </head>
 
@@ -65,7 +68,7 @@
             <div class="carousel" data-carousel>
                 <div class="black-overlay"></div>
                 <div class="home-content">
-                    <div class="text-1">Collars</div>
+                    <div class="text-1" id="bannerTitle"></div>
                 </div>
                 <ul data-slides>
                     <li class="slide" data-active><img src="../assets/img/banner-12.jpg" loading="lazy" alt="Dog1"></li>
@@ -77,38 +80,69 @@
     <!-- Product Section Start -->
     <section class="product" id="product">
         <div class="max-width">
+            <div class="sort">
+                <select class="sort-menu" id="sortMenu" onchange="sortProducts();">
+                    <option value="">Sort By</option>
+                    <option value="newest">Newest</option>
+                    <option value="L-H Price">Price (Low To High)</option>
+                    <option value="H-L Price">Price (High To Low)</option>
+                    <option value="A-Z">Name (A - Z)</option>
+                    <option value="Z-A">Name (Z - A)</option>
+                </select>
+            </div>
             <div class="product-content">
                 <div class="product-filter">
                     <h1 class="title">Filter</h1>
-                    <form class="filter-section" name="sizeFilter">
+                    <form class="filter-section" name="sizeFilter" id="sizeFilter">
                         <div class="filter-header">
                             <h4 class="title">Size</h4>
                             <a href="javascript:clear('size');">Clear</a>
                         </div>
                         <div class="filter-row">
                             <label for="forLarge">Large</label>
-                            <input type="checkbox" id="forLarge" name="sizeFilter" value="L">
+                            <input type="checkbox" id="forLarge" name="sizeFilter" value="L"
+                                onclick="submitFilterForm()">
                         </div>
                         <div class="filter-row">
                             <label for="forXLarge">Large 1.5*</label>
-                            <input type="checkbox" id="forXLarge" name="sizeFilter" value="XL">
+                            <input type="checkbox" id="forXLarge" name="sizeFilter" value="XL"
+                                onclick="submitFilterForm()">
                         </div>
                         <div class="filter-row">
                             <label for="forMedium">Medium</label>
-                            <input type="checkbox" id="row" name="sizeFilter" value="M">
+                            <input type="checkbox" id="row" name="sizeFilter" value="M" onclick="submitFilterForm()">
                         </div>
                         <div class="filter-row">
                             <label for="forSmall">Small</label>
-                            <input type="checkbox" id="forSmall" name="sizeFilter" value="S">
+                            <input type="checkbox" id="forSmall" name="sizeFilter" value="S"
+                                onclick="submitFilterForm()">
                         </div>
                         <div class="filter-row">
                             <label for="forXSmall">XSmall</label>
-                            <input type="checkbox" id="forXSmall" name="sizeFilter" value="XS">
+                            <input type="checkbox" id="forXSmall" name="sizeFilter" value="XS"
+                                onclick="submitFilterForm()">
+                        </div>
+                    </form>
+                    <form class="filter-section price-range" name="prizeRange" id="prizeRange">
+                        <div class="filter-header">
+                            <h4 class="title">Price</h4>
+                            <a href="javascript:clear('size');">Clear</a>
+                        </div>
+                        <!-- <div class="filter-row">
+                            <label for="forXSmall">XSmall</label>
+                            <input type="checkbox" id="forXSmall" name="prizeRange" value="XS"
+                                onclick="submitFilterForm()">
+                        </div> -->
+                        <div>
+                            <label for="amount">Price range:</label>
+                            <input type="text" id="amount" readonly
+                                style="border:0;color:#D80086;font-weight:bold;margin-bottom:20px;">
+                            <div id="slider-range"></div>
                         </div>
                     </form>
                 </div>
-                <div class="product-list">
-                    <div class="product-card">
+                <div class="product-list" id="productList">
+                    <!-- <div class="product-card">
                         <img src="../assets/img/product-1.jpg" alt="">
                         <span>Tribal</span>
                         <p>From $19.99</p>
@@ -120,150 +154,7 @@
                             <option value="XL">Large 1.5*</option>
                         </select>
                         <button class="atc-btn" onclick="addToCart();">Add To Cart</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="../assets/img/product-1.jpg" alt="">
-                        <span>Tribal</span>
-                        <p>From $19.99</p>
-                        <select id="collarSize" class="sizeMenu">
-                            <option value="XS">XSmall</option>
-                            <option value="S">Small</option>
-                            <option value="M">Medium</option>
-                            <option value="L">Large</option>
-                            <option value="XL">Large 1.5*</option>
-                        </select>
-                        <button class="atc-btn" onclick="addToCart();">Add To Cart</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="../assets/img/product-1.jpg" alt="">
-                        <span>Tribal</span>
-                        <p>From $19.99</p>
-                        <select id="collarSize" class="sizeMenu">
-                            <option value="XS">XSmall</option>
-                            <option value="S">Small</option>
-                            <option value="M">Medium</option>
-                            <option value="L">Large</option>
-                            <option value="XL">Large 1.5*</option>
-                        </select>
-                        <button class="atc-btn" onclick="addToCart();">Add To Cart</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="../assets/img/product-1.jpg" alt="">
-                        <span>Tribal</span>
-                        <p>From $19.99</p>
-                        <select id="collarSize" class="sizeMenu">
-                            <option value="XS">XSmall</option>
-                            <option value="S">Small</option>
-                            <option value="M">Medium</option>
-                            <option value="L">Large</option>
-                            <option value="XL">Large 1.5*</option>
-                        </select>
-                        <button class="atc-btn" onclick="addToCart();">Add To Cart</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="../assets/img/product-1.jpg" alt="">
-                        <span>Tribal</span>
-                        <p>From $19.99</p>
-                        <select id="collarSize" class="sizeMenu">
-                            <option value="XS">XSmall</option>
-                            <option value="S">Small</option>
-                            <option value="M">Medium</option>
-                            <option value="L">Large</option>
-                            <option value="XL">Large 1.5*</option>
-                        </select>
-                        <button class="atc-btn" onclick="addToCart();">Add To Cart</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="../assets/img/product-1.jpg" alt="">
-                        <span>Tribal</span>
-                        <p>From $19.99</p>
-                        <select id="collarSize" class="sizeMenu">
-                            <option value="XS">XSmall</option>
-                            <option value="S">Small</option>
-                            <option value="M">Medium</option>
-                            <option value="L">Large</option>
-                            <option value="XL">Large 1.5*</option>
-                        </select>
-                        <button class="atc-btn" onclick="addToCart();">Add To Cart</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="../assets/img/product-1.jpg" alt="">
-                        <span>Tribal</span>
-                        <p>From $19.99</p>
-                        <select id="collarSize" class="sizeMenu">
-                            <option value="XS">XSmall</option>
-                            <option value="S">Small</option>
-                            <option value="M">Medium</option>
-                            <option value="L">Large</option>
-                            <option value="XL">Large 1.5*</option>
-                        </select>
-                        <button class="atc-btn" onclick="addToCart();">Add To Cart</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="../assets/img/product-1.jpg" alt="">
-                        <span>Tribal</span>
-                        <p>From $19.99</p>
-                        <select id="collarSize" class="sizeMenu">
-                            <option value="XS">XSmall</option>
-                            <option value="S">Small</option>
-                            <option value="M">Medium</option>
-                            <option value="L">Large</option>
-                            <option value="XL">Large 1.5*</option>
-                        </select>
-                        <button class="atc-btn" onclick="addToCart();">Add To Cart</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="../assets/img/product-1.jpg" alt="">
-                        <span>Tribal</span>
-                        <p>From $19.99</p>
-                        <select id="collarSize" class="sizeMenu">
-                            <option value="XS">XSmall</option>
-                            <option value="S">Small</option>
-                            <option value="M">Medium</option>
-                            <option value="L">Large</option>
-                            <option value="XL">Large 1.5*</option>
-                        </select>
-                        <button class="atc-btn" onclick="addToCart();">Add To Cart</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="../assets/img/product-1.jpg" alt="">
-                        <span>Tribal</span>
-                        <p>From $19.99</p>
-                        <select id="collarSize" class="sizeMenu">
-                            <option value="XS">XSmall</option>
-                            <option value="S">Small</option>
-                            <option value="M">Medium</option>
-                            <option value="L">Large</option>
-                            <option value="XL">Large 1.5*</option>
-                        </select>
-                        <button class="atc-btn" onclick="addToCart();">Add To Cart</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="../assets/img/product-1.jpg" alt="">
-                        <span>Tribal</span>
-                        <p>From $19.99</p>
-                        <select id="collarSize" class="sizeMenu">
-                            <option value="XS">XSmall</option>
-                            <option value="S">Small</option>
-                            <option value="M">Medium</option>
-                            <option value="L">Large</option>
-                            <option value="XL">Large 1.5*</option>
-                        </select>
-                        <button class="atc-btn" onclick="addToCart();">Add To Cart</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="../assets/img/product-1.jpg" alt="">
-                        <span>Tribal</span>
-                        <p>From $19.99</p>
-                        <select id="collarSize" class="sizeMenu">
-                            <option value="XS">XSmall</option>
-                            <option value="S">Small</option>
-                            <option value="M">Medium</option>
-                            <option value="L">Large</option>
-                            <option value="XL">Large 1.5*</option>
-                        </select>
-                        <button class="atc-btn" onclick="addToCart();">Add To Cart</button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <ul class="pagination">
@@ -287,14 +178,15 @@
         <h1>Cart</h1>
         <div class="cart-content">
             <div class="item-list">
-                <div class="cart-item">
+                <!-- <div class="cart-item">
                     <img src="../assets/img/product-1.jpg" alt="">
                     <div class="cart-item-content">
                         <p class="product-name">Tribal</p>
                         <p class="product-price">$19.99</p>
                         <p class="product-size">Product Size: Medium</p>
                         <div class="counter">
-                            <i class="fa-solid fa-minus" onclick="decrement(document.getElementById('tribalCount'))"></i>
+                            <i class="fa-solid fa-minus"
+                                onclick="decrement(document.getElementById('tribalCount'))"></i>
                             <div class="count" id="tribalCount" value="1">1</div>
                             <i class="fa-solid fa-plus" onclick="increment(document.getElementById('tribalCount'))"></i>
                         </div>
@@ -307,7 +199,8 @@
                         <p class="product-price">$19.99</p>
                         <p class="product-size">Product Size: Medium</p>
                         <div class="counter">
-                            <i class="fa-solid fa-minus" onclick="decrement(document.getElementById('tribalCount'))"></i>
+                            <i class="fa-solid fa-minus"
+                                onclick="decrement(document.getElementById('tribalCount'))"></i>
                             <div class="count" id="tribalCount" value="2">2</div>
                             <i class="fa-solid fa-plus" onclick="increment(document.getElementById('tribalCount'))"></i>
                         </div>
@@ -320,12 +213,13 @@
                         <p class="product-price">$19.99</p>
                         <p class="product-size">Product Size: Medium</p>
                         <div class="counter">
-                            <i class="fa-solid fa-minus" onclick="decrement(document.getElementById('tribalCount'))"></i>
+                            <i class="fa-solid fa-minus"
+                                onclick="decrement(document.getElementById('tribalCount'))"></i>
                             <div class="count" id="tribalCount" value="2">2</div>
                             <i class="fa-solid fa-plus" onclick="increment(document.getElementById('tribalCount'))"></i>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="subtotal">
                 <h3>SubTotal</h3>
@@ -370,7 +264,6 @@
     </footer>
 </body>
 <script>
-
 </script>
 
 </html>

@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../assets/css/common.css" />
     <link rel="stylesheet" href="../assets/css/cart.css" />
     <script src="../assets/js/common.js" defer></script>
+    <script src="../assets/js/cart.js" defer></script>
     <title>Cart</title>
 </head>
 
@@ -80,77 +81,18 @@
                 <div class="mycart-list">
                     <h1>My Cart</h1>
                     <hr>
-                    <div class="mycart-item">
-                        <div class="item-dtl">
-                            <img src="../assets/img/product-1.jpg" alt="">
-                            <div class="content-item">
-                                <p class="product-name">Tribal</p>
-                                <p class="product-price">$19.99</p>
-                                <p class="product-size">Size: Medium</p>
-                            </div>
-                            <div class="counter">
-                                <i class="fa-solid fa-minus" onclick="decrement(document.getElementById('tribalCount'))"></i>
-                                <div class="count" id="tribalCount" value="1">1</div>
-                                <i class="fa-solid fa-plus" onclick="increment(document.getElementById('tribalCount'))"></i>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-xmark"></i>
+                    <div id="cart-items-list"></div>
+                    <div id="emptyCart">
+                        <h4>Cart Is Empty</h4>
+                        <a href="/shop">Continue Browsing</a>
                     </div>
-                    <hr>
-                    <div class="mycart-item">
-                        <div class="item-dtl">
-                            <img src="../assets/img/product-1.jpg" alt="">
-                            <div class="content-item">
-                                <p class="product-name">Tribal</p>
-                                <p class="product-price">$19.99</p>
-                                <p class="product-size">Size: Medium</p>
-                            </div>
-                            <div class="counter">
-                                <i class="fa-solid fa-minus" onclick="decrement(document.getElementById('tribalCount'))"></i>
-                                <div class="count" id="tribalCount" value="1">1</div>
-                                <i class="fa-solid fa-plus" onclick="increment(document.getElementById('tribalCount'))"></i>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-xmark"></i>
-                    </div>
-                    <hr>
-                    <div class="mycart-item">
-                        <div class="item-dtl">
-                            <img src="../assets/img/product-1.jpg" alt="">
-                            <div class="content-item">
-                                <p class="product-name">Tribal</p>
-                                <p class="product-price">$19.99</p>
-                                <p class="product-size">Size: Medium</p>
-                            </div>
-                            <div class="counter">
-                                <i class="fa-solid fa-minus" onclick="decrement(document.getElementById('tribalCount'))"></i>
-                                <div class="count" id="tribalCount" value="1">1</div>
-                                <i class="fa-solid fa-plus" onclick="increment(document.getElementById('tribalCount'))"></i>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-xmark"></i>
-                    </div>
-                    <hr>
+
                     <div class="collapsible-item">
-                        <button class="btn btn-link" data-toggle="collapse" data-target="#promoCodeInput" aria-expanded="true" aria-controls="promoCodeInput">
-                            <i class="fa-solid fa-tag"></i>
-                            <span>Enter a Promo Code</span>
-                        </button>
-                    
-                        <div id="promoCodeInput" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                            <div class="card-body">
-                                <div class="code-input">
-                                    <input type="text" id="promoCode" placeholder="Enter a Promo Code">
-                                    <button>Apply</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="collapsible-item">
-                        <button class="btn btn-link" data-toggle="collapse" data-target="#addNoteInput" aria-expanded="true" aria-controls="addNoteInput">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#addNoteInput"
+                            aria-expanded="true" aria-controls="addNoteInput">
                             <span>Add a Note</span>
                         </button>
-                    
+
                         <div id="addNoteInput" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                             <div class="card-body">
                                 <textarea name="additionalNote" id="additionalNote" rows="7"></textarea>
@@ -163,19 +105,19 @@
                     <hr>
                     <div class="summary-row">
                         <span>Subtotal</span>
-                        <span>$49.98</span>
+                        <span class="overall-subtotal"></span>
                     </div>
                     <div class="summary-row">
-                        <span>Shipping</span>
-                        <span>$8.99</span>
+                        <span id="shipping-label"></span>
+                        <span id="shipping-price"></span>
                     </div>
-                    <a href="javascript:selectDestination();">Singapore, Singapore</a>
+                    <select name="shippingType" id="shippingType" onchange="changeShippingType();"></select>
                     <hr>
                     <div class="summary-row">
                         <h4>Total</h4>
-                        <h4>$58.97</h4>
+                        <h4 id="totalOrderPrice"></h4>
                     </div>
-                    <button class="checkoutBtn" onclick="location.href='/checkout'">Checkout</button>
+                    <button class="checkoutBtn" onclick="checkout()">Checkout</button>
                 </div>
             </div>
         </div>
@@ -190,7 +132,7 @@
         <h1>Cart</h1>
         <div class="cart-content">
             <div class="item-list">
-                <div class="cart-item">
+                <!-- <div class="cart-item">
                     <img src="../assets/img/product-1.jpg" alt="">
                     <div class="cart-item-content">
                         <p class="product-name">Tribal</p>
@@ -202,33 +144,7 @@
                             <i class="fa-solid fa-plus" onclick="increment(document.getElementById('tribalCount'))"></i>
                         </div>
                     </div>
-                </div>
-                <div class="cart-item">
-                    <img src="../assets/img/product-1.jpg" alt="">
-                    <div class="cart-item-content">
-                        <p class="product-name">Tribal</p>
-                        <p class="product-price">$19.99</p>
-                        <p class="product-size">Product Size: Medium</p>
-                        <div class="counter">
-                            <i class="fa-solid fa-minus" onclick="decrement(document.getElementById('tribalCount'))"></i>
-                            <div class="count" id="tribalCount" value="2">2</div>
-                            <i class="fa-solid fa-plus" onclick="increment(document.getElementById('tribalCount'))"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="cart-item">
-                    <img src="../assets/img/product-1.jpg" alt="">
-                    <div class="cart-item-content">
-                        <p class="product-name">Tribal</p>
-                        <p class="product-price">$19.99</p>
-                        <p class="product-size">Product Size: Medium</p>
-                        <div class="counter">
-                            <i class="fa-solid fa-minus" onclick="decrement(document.getElementById('tribalCount'))"></i>
-                            <div class="count" id="tribalCount" value="2">2</div>
-                            <i class="fa-solid fa-plus" onclick="increment(document.getElementById('tribalCount'))"></i>
-                        </div>
-                    </div>
-                </div>
+                </div> -->
             </div>
             <div class="subtotal">
                 <h3>SubTotal</h3>
@@ -272,7 +188,7 @@
     </footer>
 </body>
 <script>
-    
+
 </script>
 
 </html>

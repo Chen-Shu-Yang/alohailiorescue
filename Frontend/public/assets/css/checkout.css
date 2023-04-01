@@ -184,20 +184,16 @@ input.button:hover {
     display: block;
 }
 
-.payment-dtl, .order-summary {
-    background: #f4f4f4;
-    padding: 30px;
-    flex-basis: 45%;
-}
-
 .order-summary {
     position: sticky;
     top: 0;
 }
 
 .summary-prod-list {
-    height: 300px;
+    min-height: 200px;
+    max-height: 300px;
     overflow-y: auto;
+    margin-bottom: 20px;
 }
 
 .summary-head, .smry-product,
@@ -334,9 +330,5 @@ input.button:hover {
     .smry-product img {
         width: 60px;
         height: 60px;
-    }
-
-    .payment-dtl, .order-summary {
-        padding: 15px;
     }
 }

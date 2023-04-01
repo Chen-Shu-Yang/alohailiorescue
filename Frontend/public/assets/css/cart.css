@@ -114,6 +114,14 @@
     margin-bottom: 20px;
 }
 
+#shippingType {
+    width: 100%;
+    padding: 5px;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
 .checkoutBtn {
     width: 100%;
     padding: 5px;
@@ -122,4 +130,14 @@
     color: #D80086;
     background: #F9DAED;
     cursor: pointer;
+}
+
+#emptyCart {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+    gap: 7px;
 }
