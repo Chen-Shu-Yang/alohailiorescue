@@ -1,0 +1,135 @@
+.carousel, .black-overlay {
+    height: 500px;
+}
+
+.home-content .text-1 {
+    color: #F9DAED;
+}
+
+.story-content {
+    display: grid;
+    grid-template-columns: 60% 30%;
+    gap: 10%;
+}
+
+.story-row {
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #c4c4c4;
+}
+
+.story-row:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.story-title, .story-des,
+.story-date {
+    cursor: pointer;
+}
+
+.story-title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-decoration: none;
+    font-family: 'Ubuntu', 'sans-serif';
+}
+
+.story-title:hover {
+    text-decoration: underline;
+}
+
+.story-des {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.story-date {
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.load-more-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:focus {
+    outline: none;
+}
+
+#loadMoreBtn,
+.editStoryBtn,
+.deleteStoryBtn {
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    background: none;
+    border: 2px solid #D80086;
+    padding: 6px 40px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 200ms;
+}
+
+.editStoryBtn,
+.deleteStoryBtn {
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 4px 20px;
+    margin-top: 10px;
+}
+
+.deleteStoryBtn {
+    border: 2px solid red;
+}
+
+#loadMoreBtn:hover,
+.editStoryBtn:hover,
+.deleteStoryBtn:hover {
+    color: #fff;
+    background: #D80086;
+}
+
+.deleteStoryBtn:hover {
+    background: red;
+}
+
+.popular-row {
+    margin-bottom: 20px;
+}
+
+.popular-title {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.popular-title:hover {
+    text-decoration: underline;
+}
+
+.popular-date {
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 795px) {
+    .story-content {
+        display: grid;
+        grid-template-columns: 60% 37%;
+        gap: 3%;
+    }
+}
+
+@media (max-width: 650px) {
+    .story-content {
+        display: block;
+        width: 100%;
+    }
+
+    .popular-story {
+        display: none;
+    }
+}

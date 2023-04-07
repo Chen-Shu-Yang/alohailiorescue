@@ -1,0 +1,27 @@
+* {
+    font-family: 'Poppins', 'sans-serif';
+}
+
+.storyDtl-section {
+    padding-top: 120px;
+}
+
+.storyDtl-section ul li {
+    list-style: disc inside none;
+}
+
+#storyTitle {
+    font-size: 2.5rem;
+    margin: 0;
+    margin-top: 10px;
+}
+
+#storyDate {
+    font-weight: 300;
+    margin: 0;
+    margin-top: 10px;
+}
+
+#storyContent {
+    margin-top: 35px;
+}

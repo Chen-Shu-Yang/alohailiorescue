@@ -16,6 +16,7 @@ const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY);
 // ====================== model ======================
 const Shop = require('../model/shop');
 const User = require('../model/user');
+const Story = require('../model/story');
 const { getShippingDetails } = require('../model/shop');
 
 const urlEncodedParser = bodyParser.urlencoded({ extended: false });
@@ -441,7 +442,6 @@ app.post('/checkout/shipping-form', printDebugInfo, async (req, res) => {
                 userId, address, userState,
                 userCity, userPostalCode,
                 (err, addShippingDtl) => {
-                  console.log(addShippingDtl);
                   res.status(200).send({ success: "Suceess" });
                 });
             } else {
@@ -615,6 +615,102 @@ app.post('/clear/cart/:deviceId', printDebugInfo, async (req, res) => {
       }
     } else {
       res.status(500).send('Something went wrong when checking for guest user');
+    }
+  });
+});
+
+app.post('/story/new', printDebugInfo, async (req, res) => {
+  const title = req.body.title;
+  const slug = req.body.slug;
+  const description = req.body.description;
+  const content = req.body.content;
+
+  // calling postStory method from Shop model
+  Story.postStory(title, slug, description, content, (err, result) => {
+    if (!err) {
+      res.status(200).send({ msg: 'Story posted successfully' })
+    } else {
+      res.status(500).send({ errMsg: 'Something went wrong when checking for guest user' });
+    }
+  });
+});
+
+app.get('/story/:limit', printDebugInfo, async (req, res) => {
+  const limit = req.params.limit;
+  
+  // calling getStories method from Shop model
+  Story.getStories(limit, (err, result) => {
+    if (!err) {
+      res.status(200).send(result);
+    } else {
+      res.status(500).send({ errMsg: 'Something went wrong when checking for guest user' });
+    }
+  });
+});
+
+app.get('/featured/story', printDebugInfo, async (req, res) => {
+  // calling getFeaturedStories method from Shop model
+  Story.getFeaturedStories((err, result) => {
+    if (!err) {
+      res.status(200).send(result);
+    } else {
+      res.status(500).send({ errMsg: 'Something went wrong when checking for guest user' });
+    }
+  });
+});
+
+app.get('/story-dtl/:slug', printDebugInfo, async (req, res) => {
+  const slug = req.params.slug;
+  
+  // calling getStoriesBySlug method from Shop model
+  Story.getStoriesBySlug(slug, (err, result) => {
+    if (!err) {
+      res.status(200).send(result[0]);
+    } else {
+      res.status(500).send({ errMsg: 'Something went wrong when checking for guest user' });
+    }
+  });
+});
+
+app.get('/story-edit/:id', printDebugInfo, async (req, res) => {
+  const id = req.params.id;
+  
+  // calling getStoriesById method from Shop model
+  Story.getStoriesById(id, (err, result) => {
+    if (!err) {
+      res.status(200).send(result[0]);
+    } else {
+      res.status(500).send({ errMsg: 'Something went wrong when checking for guest user' });
+    }
+  });
+});
+
+app.put('/story/edit', printDebugInfo, async (req, res) => {
+  const title = req.body.title;
+  const slug = req.body.slug;
+  const description = req.body.description;
+  const content = req.body.content;
+  const storyId = req.body.storyId;
+
+  // calling updateStory method from Shop model
+  Story.updateStory(title, slug, description, content, storyId, (err, result) => {
+    if (!err) {
+      res.status(200).send({ msg: 'Story updated successfully' })
+    } else {
+      res.status(500).send({ errMsg: 'Something went wrong when checking for guest user' });
+    }
+  });
+});
+
+app.delete('/story/:id', printDebugInfo, async (req, res) => {
+  const storyId = req.params.id;
+
+  // calling deleteStory method from Shop model
+  Story.deleteStory(storyId, (err, result) => {
+    if (!err) {
+      res.status(200).send({ msg: 'Story deleted successfully' })
+    } else {
+      res.status(500).send({ errMsg: 'Something went wrong when checking for guest user' });
     }
   });
 });

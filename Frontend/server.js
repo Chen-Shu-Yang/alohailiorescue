@@ -83,6 +83,21 @@ app.get('/checkout/success', (req, res) => {
   res.sendFile('/public/assets/html/success.html', { root: __dirname });
 });
 
+// go to Blog Editor
+app.get('/blog/editor', (req, res) => {
+  res.sendFile('/public/assets/html/blogEditor.html', { root: __dirname });
+});
+
+// go to Stories
+app.get('/stories', (req, res) => {
+  res.sendFile('/public/assets/html/stories.html', { root: __dirname });
+});
+
+// go to Stories
+app.get('/stories/:slug', (req, res) => {
+  res.sendFile('/public/assets/html/storyDtl.html', { root: __dirname });
+});
+
 // retrieve from public folder
 app.use(serveStatic(`${__dirname}/public`));
 

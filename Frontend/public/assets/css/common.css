@@ -23,7 +23,7 @@ html {
 .dog-list, .adoption-fees, .donate,
 .volunteer, .wall-of-volunteers,
 .shop-section, .product, .my-cart,
-.checkout {
+.checkout, .story-section, .storyDtl-section {
     width: 100%;
     padding: 80px 0;
 }
@@ -592,7 +592,6 @@ footer .copyright {
     .cart .cart-content {
         height: auto;
     }
-
     
     .cart .item-list {
         max-height: 280px;

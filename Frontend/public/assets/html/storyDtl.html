@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/logo.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../vendors/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../vendors/fontawesome/css/all.css">
+    <link rel="stylesheet" href="../vendors/fontawesome/css/solid.css">
+    <link rel="stylesheet" href="../assets/css/common.css" />
+    <link rel="stylesheet" href="../assets/css/blogEditor.css" />
+    <link rel="stylesheet" href="../assets/css/storyDtl.css" />
+    <script src="../assets/js/common.js" defer></script>
+    <script src="../assets/js/storyDtl.js"></script>
+    <script src="../vendors/ckeditor/ckeditor.js"></script>
+    
+    <title>Blog Editor</title>
+</head>
+
+<body>
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo">
+                <a href="/">
+                    <img src="../assets/img/Logo-bg.png" loading="lazy" alt="">
+                </a>
+            </div>
+            <ul class="menu">
+                <li id="adoptionMenuItem">
+                    <a href="/adoptabledogs" class="menu-btn">Adoption</a>
+                    <div class="dropdown">
+                        <a href="/adoptabledogs">Adoptable Dogs</a>
+                        <a href="/adoptionfees">Adoption Fees</a>
+                    </div>
+                </li>
+                <li><a href="/stories" class="menu-btn">Stories</a></li>
+                <li><a href="/" class="menu-btn">Upcoming Events</a></li>
+                <li><a href="/shop" class="menu-btn">Shop</a></li>
+                <li id="contactMenuItem">
+                    <a href="/contact" class="menu-btn">Contact</a>
+                    <div class="dropdown">
+                        <a href="/itemdonate">Donate Food & Items</a>
+                        <a href="/volunteer">Volunteer</a>
+                        <a href="/sponsorships">Become Partners</a>
+                    </div>
+                </li>
+
+                <li><a href="javascript:openCart();" class="menu-btn cart-btn"><i class="fas fa-shopping-cart"></i></a>
+                </li>
+                <li><a href="/donate" class="menu-btn button">Donate</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section class="storyDtl-section">
+        <div class="max-width">
+            <div class="storyDtl-content">
+                <h1 id="storyTitle"></h1>
+                <p id="storyDate"></p>
+                <div id="storyContent"></div>
+            </div>
+        </div>
+    </section>
+    
+
+    <div class="overlay"></div>
+    <div class="cart">
+        <div class="close-cart">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Close Cart</span>
+        </div>
+        <h1>Cart</h1>
+        <div class="cart-content">
+            <div class="item-list"></div>
+            <div class="subtotal">
+                <h3></h3>
+                <h4></h4>
+                <button class="vc-btn" onclick="location.href='/cart'">View Cart</button>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Section Start -->
+    <footer class="footer">
+        <div class="max-width">
+            <div class="footer-content">
+                <img src="../assets/img/Logo.png" loading="lazy" alt="">
+                <ul class="abt-us">
+                    <li class="list-header">About Us</li>
+                    <li><a href="/">Mission</a></li>
+                    <li><a href="/">About</a></li>
+                    <li><a href="/stories">Story of Goods</a></li>
+                    <li><a href="/">FAQ</a></li>
+                </ul>
+                <ul class="get-involved">
+                    <li class="list-header">Get Involved</li>
+                    <li><a href="/sponsorships">Become Partners</a></li>
+                    <li><a href="/donate">Donate</a></li>
+                    <li><a href="/volunteer">Volunteer</a></li>
+                    <li><a href="/">Career</a></li>
+                </ul>
+                <ul>
+                    <li class="list-header">Contact Us</li>
+                    <li><a href="/">Contact Us Form</a></li>
+                    <li><a href="/">Phone: (XXX) XXX-XXXX</a></li>
+                    <li><a href="/">Send Check To: XXXXXXXXXXXX XXXXXXXXX XXXXXX</a></li>
+                    <li><a href="/">Donate Item/Food To: XXXXXXXXXXXX XXXXXXXXX XXXXXX</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-divide"></div>
+        <div class="copyright">
+            <span>© 2023 All Rights Reserved | Coded by <a href="https://www.chenshuyang.com">ChenSY.</a></span>
+        </div>
+    </footer>
+
+    <script>
+        
+    </script>
+</body>
+
+</html>
